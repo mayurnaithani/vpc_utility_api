@@ -7,8 +7,7 @@ API requests are validated via Cognito user pools, queued, and asynchronously pr
 #### **POST — Create VPC**
 
 User ------> API GW ------>  SQS ------> Lambda -------> DynamoDB
-            (Cognito)                 Event source
-                                         mapping
+            
 #### **GET — Get details of VPC**
 
 User ------> API GW ------> Lambda <------- DynamoDB
