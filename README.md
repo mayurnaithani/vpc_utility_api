@@ -4,12 +4,12 @@ Cross account and cross region VPC creation is supported within an AWS Organizat
 API requests are validated via Cognito user pools, queued, and asynchronously processed using AWS Lambda and SQS, with results stored in DynamoDB.
 
 # Workflow
-#POST 
+#### **POST — Create VPC**
 
 User ------> API GW ------>  SQS ------> Lambda -------> DynamoDB
             (Cognito)                 Event source
                                          mapping
-#GET
+#### **GET — Get details of VPC**
 
 User ------> API GW ------> Lambda <------- DynamoDB
             (Cognito)                 
