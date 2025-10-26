@@ -6,7 +6,7 @@ import logging
 
 # Create DynamoDB resource for table holding VPC info records
 ddb_client = boto3.client('dynamodb')
-vpc_ddb_table = os.getenv('vpc_info')
+vpc_ddb_table = os.getenv('vpc_info_table')
 
 
 # Configure logging

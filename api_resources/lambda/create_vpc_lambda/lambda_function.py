@@ -10,7 +10,7 @@ from utils import Utils as utils
 ec2 = boto3.client("ec2")
 ddb_client = boto3.client("dynamodb")
 
-vpc_ddb_table = os.getenv('vpc_info') # DynamoDB storing vpc information
+vpc_ddb_table = os.getenv('vpc_info_table') # DynamoDB storing vpc information
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
