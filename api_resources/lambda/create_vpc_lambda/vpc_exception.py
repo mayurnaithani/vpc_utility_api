@@ -1,0 +1,2 @@
+class VPCValueError(Exception):
+    pass
