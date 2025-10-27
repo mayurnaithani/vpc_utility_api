@@ -1,4 +1,3 @@
-output "vpc_lambda_arns" {
-  for_each = local.deployment
-  value    = aws_lambda_function.vpc_lambda[each.key].arn
+output "get_vpc_lambda_arn" {
+  value    = aws_lambda_function.vpc_lambda['get'].arn
 }
