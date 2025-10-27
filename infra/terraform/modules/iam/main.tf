@@ -18,17 +18,17 @@ resource "aws_iam_role" "vpc_lambda_role" {
 
 data "aws_iam_policy_document" "policy" {
   statement {
-    effect = "Allow"
-    actions = [
+    effect    = "Allow"
+    actions   = [
       "sqs:GetQueueAttributes",
       "sqs:GetMessage"
     ]
-    resources = [var.sqs_queue.arn_in]
+    resources = [*]
   }
 
   statement {
-    effect = "Allow"
-    actions = [
+    effect    = "Allow"
+    actions   = [
       "dynamodb:GetItem",
       "dynamodb:PutItem"
     ]
