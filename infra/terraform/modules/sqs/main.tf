@@ -5,7 +5,7 @@ resource "aws_sqs_queue" "vpc_queue" {
 
 data "aws_iam_policy_document" "sqs_policy" {
   statement {
-    sid    = "AllowConsumeByWorkerLambda"
+    sid    = "AllowLambda"
     effect = "Allow"
 
     principals {
@@ -21,6 +21,21 @@ data "aws_iam_policy_document" "sqs_policy" {
 
     resources = [aws_sqs_queue.vpc_queue.arn]
   }
+  statement {
+    sid    = "AllowAPIGW"
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["apigateway.amazonaws.com"]
+    }
+
+    actions = [
+      "sqs:SendMessage"
+    ]
+
+    resources = [aws_sqs_queue.vpc_queue.arn]
+  }  
 }
 
 resource "aws_sqs_queue_policy" "vpc_queue_policy" {
