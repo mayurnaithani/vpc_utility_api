@@ -1,14 +1,14 @@
 locals {
   lambda = {
     get = {
-      name        = create_vpc_function
-      source_dir  = "${path.module}/get_vpc_lambda"
+      name        = get_vpc_function
+      source_dir  = "${path.root}/api_ressources/aws_lambda/get_vpc_lambda"
       output_path = "${path.module}/get_vpc_lambda.zip"
       handler     = "get_vpc_lambda.lambda_handler"
     }
     post = {
-      name        = get_vpc_function
-      source_dir  = "${path.module}/create_vpc_lambda"
+      name        = create_vpc_function
+      source_dir  = "${path.root}/api_ressources/aws_lambda/create_vpc_lambda"
       output_path = "${path.module}/create_vpc_lambda.zip"
       handler     = "create_vpc_lambda.lambda_handler"
     }
