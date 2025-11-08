@@ -11,7 +11,7 @@ User ------> API GW ------>  SQS ------> Lambda -------> DynamoDB
 #### **GET — Get details of VPC**
 
 User ------> API GW ------> Lambda <------- DynamoDB
-            (Cognito)                 
+                 
 
 ### Components:
 - **API Gateway (POST /create-vpc)**  
